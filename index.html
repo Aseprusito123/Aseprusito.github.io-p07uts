@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+	<title>UTS</title>
+</head>
+<body>
+	<div class="bagian"> 
+		<nav class="wrapper">
+			<div class="nama">
+				<div class="nama1"><h1>ASEP RUSITO</h1></div>
+			</div>
+				<ul class="navigation">
+				<li><a href="#home" class="active">Home</a></li>
+				<li><a href="#about" class="active">About</a></li>
+				<li><a href="#contact"  class="active">Contact</a></li>
+			</ul>
+		</nav>
+		<div id="konten">
+		<div id="isi">
+        <div id="home" class="isi_1">
+          <h1>ASSALAMUALAIKUM WR.WB</h1>
+          <img src="Image.png">
+          <p><h2>Saya ASEP RUSITO</h2></p>
+          <p><h2>IM : 32211518</h2></p>
+        </div>
+        <div id="about" class="isi_2">
+          <p>Saya mahasiswa STMIK Ikmi 2022</p>
+          <p>Prodi Komputerisasi Akuntansi</p>
+          <p>Saya juga selain mahasiswa,
+            saya sebagai karyawan swasta yang bekerja di salah satu perusahaan Rumah makan yaitu RM.Brawijaya Cirebon PO.Biss Garuda Mas</p>
+           
+        </div>
+        <div id="contact" class="isi_3">
+            <p>Hubungi saya melalui : Nomor</p>
+            <br>
+            <a href="https://web.whatsapp.com/">WA</a>
+        </div>
+      </div>
+      </div>
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+  var currentSection = 0;
+  $("#konten").hide();
+  $("li a").click(function () {
+    $("li a").removeClass("active");
+    $(this).addClass("active");
+
+    var href = $(this).attr("href");
+    $("#isi>div").hide();
+
+    $(href).show();
+
+    if (currentSection == 0) {
+      $("#konten").slideToggle(200);
+      currentSection = href;
+    } else if (currentSection == href) {
+      $("#konten").slideToggle(200);
+      currentSection = 0;
+    } else {
+      currentSection = href;
+    }
+    return false;
+  });
+});
+</script>
+
+</body>
+</html>
